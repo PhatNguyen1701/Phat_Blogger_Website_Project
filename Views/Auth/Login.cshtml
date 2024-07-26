@@ -1,0 +1,33 @@
+﻿@model Phat_Blogger_Website.ViewModels.LoginViewModel
+
+@{
+
+}
+
+
+<body class="align">
+
+    <div class="grid">
+
+        <form asp-controller="Auth" asp-action="Login" method="post" class="form login">
+
+            <div class="form__field">
+                <label for="login__username"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="hidden">Username</span></label>
+                <input asp-for="UserName" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+            </div>
+
+            <div class="form__field">
+                <label for="login__password"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span class="hidden">Password</span></label>
+                <input asp-for="Password" id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+            </div>
+
+            <div class="form__field">
+                <input type="submit" value="Sign In">
+            </div>
+
+        </form>
+
+        <p class="text--center">Not a have an account yet? <a class="a_login" asp-controller="Auth" asp-action="Register">Sign up now</a></p>
+
+    </div>
+</body>

@@ -1,0 +1,16 @@
+﻿@model Phat_Blogger_Website.ViewModels.CommentViewModel
+
+@{
+
+}
+
+<div class="sub_comment">
+    <form method="post" asp-controller="Home" asp-action="Comment">
+        <input asp-for="@Model.PostId" type="hidden" />
+        <input asp-for="@Model.MainCommentId" type="hidden" />
+        <input asp-for="@Model.UserId" type="hidden" />
+        <input asp-for="@Model.UserName" type="hidden" />
+        <input asp-for="@Model.Message" placeholder="Reply">
+        <button type="submit">Submit</button>
+    </form>
+</div>

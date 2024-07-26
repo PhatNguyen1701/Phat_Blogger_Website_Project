@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Phat_Blogger_Website.Data.Post>
+
+@{
+
+}
+
+<!-- Home Section -->
+
+<section id="home" class="main-gallery parallax-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <h1>Image Gallery</h1>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <h2>Beautiful Images Collections</h2>
+                <p>Take a look of all picture of the blog that you may interest! Feel free to get what you would like</p>
+                <p>
+                    "It's great to reminisce about good memories of my past. It was enjoyable when it was today. So learning to enjoy today has two benefits: it gives me happiness right now, and it becomes a good memory later."
+                </p>
+                <span></span>
+
+                @foreach (var post in Model)
+                {
+                    var image_path = $"/Image/{post.Image}";
+                    <div class="col-md-6 col-sm-6">
+                        <div class="gallery-thumb">
+                            <a href="#" class="image-popup">
+                                <img src="@image_path" class="img-responsive" alt="Gallery Image">
+                            </a>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-md-12 col-sm-12">
+                    <p>“Family is not an important thing. It's everything.” – Michael J. Fox. --- “The memories we make with our family is everything.” – Candace Cameron Bure.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

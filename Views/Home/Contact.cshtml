@@ -1,0 +1,50 @@
+﻿@model Phat_Blogger_Website.ViewModels.EmailSenderViewModel
+
+@{
+
+}
+
+<!-- Home Section -->
+
+<section id="home" class="main-contact parallax-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <h1>Let say Hello</h1>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <h2>Any email for me?</h2>
+                <p>I will very happy to have talk with you, this website still have alot of problem and need to be improve, please tell me any your ideals or sharing knowledge to each other.</p>
+
+                <form action="#" method="post">
+                    <div class="col-md-4 col-sm-4">
+                        <input asp-for="Email" name="email" type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <input asp-for="Subject" name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <textarea asp-for="Message" name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <input name="submit" type="submit" class="form-control" id="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

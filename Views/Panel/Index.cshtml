@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Phat_Blogger_Website.Data.Post>
+
+@{
+
+}
+
+<h2 class="h2_panel">ADMIN PANEL</h2>
+<a class="a_panel" asp-controller="Panel" asp-action="Edit">
+    Add new blog
+</a>
+
+<body class="panel">
+    <ol class="ol_panel" style="--length: @Model.Count()" role="list">
+        @foreach (var post in Model)
+        {
+            <li class="li_panel" style="--i: @post.Id">
+                <h3>@post.Title</h3>
+                <p>@Html.Raw(post.Body)</p>
+                <a class="edit_panel" asp-controller="Panel" asp-action="Edit" asp-route-id="@post.Id">
+                    Edit
+                </a>
+                -
+                <a class="edit_panel" asp-controller="Panel" asp-action="Remove" asp-route-id="@post.Id">
+                    Delete
+                </a>
+            </li>
+        }
+    </ol>
+
+</body>

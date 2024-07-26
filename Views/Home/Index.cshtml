@@ -1,0 +1,78 @@
+﻿@model Phat_Blogger_Website.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Blog Website";
+    ViewBag.Description = "Blog Website For Everyone";
+    ViewBag.Keywords = "blog programing travel daily story";
+}
+
+<!-- Home Section -->
+
+<section id="home" class="main-home parallax-section">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h1>Phat Blogger Website!</h1>
+                <h4>Hello and welcome everyone visit to my blog!</h4>
+                <form id="searchform" asp-controller="Home" asp-action="Index" method="get">
+                    <input type="hidden" name="pageNumber" value="@Model.PageNumber" />
+                    <input type="hidden" name="category" value="@Model.Category" />
+                    <input class="search" type="text" name="search" value="@Model.Search" placeholder="Search For Your Blog!" />
+                </form>
+                <button type="submit" form="searchform" class="smoothScroll btn btn-default">Search</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+
+<section id="blog">
+    <div class="container">
+
+        <partial name="_BlogPagination" model="Model" />
+
+        <div class="row">
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="blog-post-thumb">
+
+                    @foreach (var post in Model.Posts)
+                    {
+                        var image_path = $"/Image/{post.Image}";
+
+                        <div class="blog-post-image">
+                            <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+                                <img class="img-responsive" alt="Blog Image" src="@image_path" />
+                            </a>
+                        </div>
+
+                        <div class="blog-post-title">
+                            <h3><a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">@post.Title</a></h3>
+                        </div>
+
+                        <div class="blog-post-format">
+                            <span><a href="#"><img src="~/content/static/admin-avatar.jpg" class="img-responsive img-circle"> User Name</a></span>
+                            <span><i class="fa fa-date"></i> @post.Created</span>
+                            <span><a a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id"><i class="fa fa-comment-o"></i> @post.MainComments.Count()</a></span>
+                        </div>
+
+                        <div class="blog-post-des">
+                            <p>@post.Description</p>
+                            <a a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id" class="btn btn-default">Continue Reading</a>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <partial name="_BlogPagination" model="Model" />
+
+    </div>
+</section>

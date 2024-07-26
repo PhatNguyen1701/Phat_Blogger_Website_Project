@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Phat_Blogger_Website.props" />
+</Project>

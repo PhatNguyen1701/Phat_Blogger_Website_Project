@@ -1,0 +1,133 @@
+﻿@model Phat_Blogger_Website.ViewModels.PostViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.Description = Model.Description;
+    ViewBag.Keywords = $"{Model.Tags?.Replace(",", " ")} {Model.Category}";
+}
+
+<!-- Home Section -->
+
+<section id="home" class="main-single-post parallax-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <h1>@Model.Title</h1>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Blog Single Post Section -->
+
+<section id="blog-single-post">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="blog-single-post-thumb">
+
+                    <div class="blog-post-title">
+                        <h2>@Model.Title</a></h2>
+                    </div>
+
+                    <div class="blog-post-format">
+                        <span><a href="#"><img src="~/content/static/admin-avatar.jpg" class="img-responsive img-circle"> Username</a></span>
+                        <span><i class="fa fa-date"></i> @Model.Created</span>
+                        <span><a href="#"><i class="fa fa-comment-o"></i>@Model.MainComments.Count()</a></span>
+                    </div>
+
+                    <div class="blog-post-des">
+                        <blockquote>@Model.Tags</blockquote>
+                        <p>@Model.Description</p>
+                        @if (!String.IsNullOrEmpty(Model.ImageURL))
+                        {
+                            var image_path = $"/Image/{Model.ImageURL}";
+                            <div class="blog-post-image">
+                                <img src="@image_path" class="img-responsive">
+                            </div>
+                        }
+                        <p>@Html.Raw(Model.Body)</p>
+                    </div>
+
+                    <div class="blog-author">
+                        <div class="media">
+                            <div class="media-object pull-left">
+                                <img src="~/content/static/admin-avatar.jpg" class="img-circle img-responsive" alt="blog">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Dyred</a></h3>
+                                <p>Author's Blog Infor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Comments-->
+                    <div class="blog-comment">
+                        <h3>Comments</h3>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="media">
+                                <div style="margin-left: -120px; margin-top: -70px;">
+                                    @{
+                                        await Html.RenderPartialAsync("_MainComment", new Phat_Blogger_Website.ViewModels.CommentViewModel { PostId = Model.Id, MainCommentId = 0, UserId = Model.UserId, UserName = Model.UserName });
+                                    }
+                                </div>
+
+                                @foreach (var c in Model.MainComments)
+                                {
+                                    @if (!String.IsNullOrEmpty(c.User.Avatar))
+                                    {
+                                        var image_path_mc = $"/Image/{c.User.Avatar}";
+                                        <div class="media-object pull-left">
+                                            <img src="@image_path_mc" class="img-circle img-responsive" alt="blog">
+                                        </div>
+                                    }
+
+                                    <div class="media-body">
+                                        <h3 class="media-heading">@c.User.UserName</h3>
+                                        <span>@c.Created</span>
+                                        <p>@c.Message</p>
+                                    </div>
+
+                                    <div style="margin-left: 105px; margin-bottom: 60px;">
+
+                                        @{
+                                            await Html.RenderPartialAsync("_SubComment", new Phat_Blogger_Website.ViewModels.CommentViewModel { PostId = Model.Id, MainCommentId = c.MainCommentId, UserId = Model.UserId, UserName = Model.UserName });
+                                        }
+
+                                        @foreach (var sc in c.SubComments)
+                                        {
+                                            <div class="media">
+                                                @if (!String.IsNullOrEmpty(sc.User.Avatar))
+                                                {
+                                                    var image_path_sc = $"/Image/{sc.User.Avatar}";
+                                                    <div class="media-object pull-left">
+                                                        <img src="@image_path_sc" class="img-responsive img-circle" alt="Blog Image 11">
+                                                    </div>
+                                                }
+                                                <div class="media-body">
+                                                    <h3 class="media-heading">@sc.User.UserName</h3>
+                                                    <span>@sc.Created</span>
+                                                    <p>@sc.Message</p>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div style="margin-bottom: 30px; margin-top: 10px;">
+                                <a style="font-weight: bold; color:#808080;" asp-controller="Auth" asp-action="Login">Sign In</a> to comment on this post!
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

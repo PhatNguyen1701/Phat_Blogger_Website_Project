@@ -1,0 +1,24 @@
+﻿@model Phat_Blogger_Website.ViewModels.CommentViewModel
+
+@{
+
+}
+
+<section id="contact">
+    <div class="container">
+        <div class="col-md-offset-1 col-md-10 col-sm-12">
+            <form method="post" asp-controller="Home" asp-action="Comment">
+                <input asp-for="@Model.PostId" type="hidden" />
+                <input asp-for="@Model.MainCommentId" type="hidden" />
+                <input asp-for="@Model.UserId" type="hidden" />
+                <input asp-for="@Model.UserName" type="hidden" />
+                <div class="col-md-12 col-sm-12">
+                    <textarea asp-for="@Model.Message" name="message" rows="3" class="form-control" id="message" placeholder="Write your comment"></textarea>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <input name="submit" type="submit" class="form-control" id="submit" value="Comment">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
