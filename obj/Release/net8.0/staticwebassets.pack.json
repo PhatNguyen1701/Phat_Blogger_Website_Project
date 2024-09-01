@@ -49,20 +49,20 @@
       "PackagePath": "staticwebassets\\content\\static\\SinglePost_Background.jpg"
     },
     {
-      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\about-image.jpg",
-      "PackagePath": "staticwebassets\\content\\static\\about-image.jpg"
-    },
-    {
-      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\about-image1.jpg",
-      "PackagePath": "staticwebassets\\content\\static\\about-image1.jpg"
-    },
-    {
-      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\about-image2.jpg",
-      "PackagePath": "staticwebassets\\content\\static\\about-image2.jpg"
-    },
-    {
       "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\admin-avatar.jpg",
       "PackagePath": "staticwebassets\\content\\static\\admin-avatar.jpg"
+    },
+    {
+      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\bookstore-img.jpg",
+      "PackagePath": "staticwebassets\\content\\static\\bookstore-img.jpg"
+    },
+    {
+      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\greenstore-img.png",
+      "PackagePath": "staticwebassets\\content\\static\\greenstore-img.png"
+    },
+    {
+      "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\content\\static\\phatblogger-img.png",
+      "PackagePath": "staticwebassets\\content\\static\\phatblogger-img.png"
     },
     {
       "Id": "D:\\MyProjects\\Phat_Blogger_Website\\Phat_Blogger_Website\\wwwroot\\css\\bootstrap.min.css",

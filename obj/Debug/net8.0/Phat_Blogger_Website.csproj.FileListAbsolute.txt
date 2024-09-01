@@ -143,3 +143,4 @@ D:\MyProjects\Phat_Blogger_Website\Phat_Blogger_Website\bin\Debug\net8.0\runtime
 D:\MyProjects\Phat_Blogger_Website\Phat_Blogger_Website\obj\Debug\net8.0\Phat_Blogger_Website.csproj.AssemblyReference.cache
 D:\MyProjects\Phat_Blogger_Website\Phat_Blogger_Website\obj\Debug\net8.0\Phat_Blogger_Website.MvcApplicationPartsAssemblyInfo.cs
 D:\MyProjects\Phat_Blogger_Website\Phat_Blogger_Website\obj\Debug\net8.0\Phat_Blo.05D0C352.Up2Date
+D:\MyProjects\Phat_Blogger_Website\Phat_Blogger_Website\obj\Debug\net8.0\Phat_Blogger_Website.sourcelink.json

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Phat_Blogger_Website")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46a56389e65b9dc6f6f7f342bbc49f3a544d71e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Phat_Blogger_Website")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Phat_Blogger_Website")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
